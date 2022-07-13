@@ -13,7 +13,7 @@
  * @param length - Length of strip
  * @param colour - Colour to use
  */
-RotaryDial::RotaryDial(PicoLed::PicoLedController *strip,
+RingRotate::RingRotate(PicoLed::PicoLedController *strip,
 		uint8_t length,
 		PicoLed::Color colour) {
 	setStrip(strip, length);
@@ -31,7 +31,7 @@ RotaryDial::RotaryDial(PicoLed::PicoLedController *strip,
 /***
  * Distructor
  */
-RotaryDial::~RotaryDial(){
+RingRotate::~RingRotate(){
 	//NOP
 }
 
@@ -42,7 +42,7 @@ RotaryDial::~RotaryDial(){
  * @param strip - PicoLed strip object
  * @param length - number of RGB LED in strip
  */
-void RotaryDial::setStrip(
+void RingRotate::setStrip(
 		PicoLed::PicoLedController *strip,
 		uint8_t length){
 	pStrip  = strip;
@@ -55,7 +55,7 @@ void RotaryDial::setStrip(
  * Set the base colour to use for the animation
  * @param colour
  */
-void RotaryDial::setColour(PicoLed::Color colour){
+void RingRotate::setColour(PicoLed::Color colour){
 	xColour = colour;
 }
 
@@ -65,7 +65,7 @@ void RotaryDial::setColour(PicoLed::Color colour){
 * @param pos - Current possition (within 360)
 * @param rotEnc - Ref to RotEnc in case multiple being used
 */
-void RotaryDial::rotate(bool clockwise, int16_t pos, void * rotEnc){
+void RingRotate::rotate(bool clockwise, int16_t pos, void * rotEnc){
 	if (pos < xLength){
 		if (pStrip != NULL){
 			pStrip->clear();

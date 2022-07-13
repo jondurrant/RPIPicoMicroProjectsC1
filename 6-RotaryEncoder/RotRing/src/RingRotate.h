@@ -13,7 +13,7 @@
 #include "RotEncObserver.h"
 #include <PicoLed.hpp>
 
-class RotaryDial : public RotEncObserver {
+class RingRotate : public RotEncObserver {
 public:
 	/***
 	 * Constructor
@@ -21,7 +21,7 @@ public:
 	 * @param length - Length of strip
 	 * @param colour - Colour to use
 	 */
-	RotaryDial(
+	RingRotate(
 			PicoLed::PicoLedController *strip,
 			uint8_t length,
 			PicoLed::Color colour);
@@ -29,7 +29,7 @@ public:
 	/***
 	 * Distructor
 	 */
-	virtual ~RotaryDial();
+	virtual ~RingRotate();
 
 	/***
 	 * Notification of rotation
